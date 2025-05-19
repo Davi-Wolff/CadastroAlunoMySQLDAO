@@ -1,44 +1,31 @@
-package Model;
+package modelo;
 
-import javax.swing.JOptionPane;
-
-/**
- *
- * @author Davi Wolff
- */
 public class Pessoa {
-    
-    //Atributos
-    
+// Atributos
+
     private int id;
     private String nome;
     private int idade;
+// Construtor de Objeto Vazio
 
-    // Método Construtor de Objeto Vazio
-    
     public Pessoa() {
+        this(0, "", 0);
     }
+// Construtor de Objeto, com parâmetros
 
-    // Método Construtor de Objeto, inserindo dados
-    
     public Pessoa(int id, String nome, int idade) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
     }
+// Métodos GET e SET
 
-    // Métodos GET e SET
-    
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
-    
-    public void setId(String id) {
-        this.id = Integer.parseInt(id);
     }
 
     public String getNome() {
@@ -56,25 +43,10 @@ public class Pessoa {
     public void setIdade(int idade) {
         this.idade = idade;
     }
-    
-    public void setIdade(String idade) {
-        this.idade = Integer.parseInt(idade);
-    }
-    
-    // Método adicional
-
-    public void fazerAniversario(){
-        idade++;
-    }
-    
-    public void mostrarDados(){
-        JOptionPane.showMessageDialog(null, "Dados: " + "Nome: " + getNome() + "\nId: " + getId() + "\nIdade: " + getIdade());
-    }
 
     @Override
     public String toString() {
-        return "Pessoa: " + "\nNome: " + getNome() + "\nId: " + getId() + "\nIdade: " + getIdade();
+        return "id=" + id + ", nome="
+                + nome + ", idade=" + idade;
     }
-    
-    
 }
